@@ -1,0 +1,317 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Blog</title>
+		<link rel="icon" type="image/png" href="images/logo.png">
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="logo">
+							<span class="icon fa-gem"></span>
+						</div>
+						<div class="content">
+							<div class="inner">
+								<h1>WELCOME EVERYONE</h1>
+								<p>I am <b><strong>Abhishek</strong></b>, A tireless seeker of knowledge and humour and also, coincidentally, a Computer Engineer.</p><br />
+								<p>This is my little space on INTERNET where you can always <a href="#contact">FIND ME</a> and all <a href="#elements">MY WORKS</a>.</p><br />
+
+								<ul class="icons">
+									<li><a href="https://twitter.com/AbhiSaphire" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="https://www.instagram.com/abhisaphire/" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="https://github.com/AbhiSaphire" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
+
+							</div>
+						</div>
+						<nav>
+							<ul>
+								<li><a href="#work">Blog</a></li>
+								<li><a href="#about">About</a></li>
+								<li><a href="#contact">Contact</a></li>
+								<li><a href="#elements">Projects</a></li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Work -->
+							<article id="work">
+								<h2 class="major">Blog</h2>
+								<span class="image main"><img src="images/background.jpg" alt="" /></span>
+								<h2>List of blogs</h2><br/>
+								<ul class="alt">
+									<li><strong><a href="#work2">Hello World</a></strong></li>
+									<li><strong><a href="#work3">Kadane's Algorithm (Dynamic Programming)</a></strong></li>
+								</ul>
+							</article>
+
+						<!--Blog Post-->
+
+						<!--Blog 1-->
+							<article id="work2">
+								<h2 class="major">Hello world</h2>
+								<span class="image main"><img src="images/helloworld.png" alt="" /></span>
+								<ul class="actions">
+										<li><span class="button small">HELLO WORLD</span></li>
+										<li><span class="button small">FIRST BLOG</span></li>
+								</ul>
+								<h2>Sorry, but i have to write hello world</h2>
+								<p><b>This is my first article on this Portfolio.</b><br/>A "Hello, World!" program is traditionally used to introduce novice programmers to a programming language.<br/>"Hello, world!" is also traditionally used in a sanity test to make sure that a computer language is correctly installed, and that the operator understands how to use it.</p><br/>
+								<a href="#work"><span class="button"><b>BACK</b></span></a>
+							</article>
+
+						<!--Blog 2-->
+							<article id="work3">
+								<h2 class="major">Kadane's Algorithm</h2>
+								<span class="image main"><img src="images/kadane_algo.jpeg" alt="" /></span>
+								<ul class="actions">
+										<li><span class="button small">KADANE ALGO</span></li>
+										<li><span class="button small">DP</span></li>
+								</ul>
+								<h2>How can such a Program works ?</h2>
+								<p>Hey, welcome. Let me guess trying to solve the famous <b>"Maximum Subarray Porblem ?"</b> and came to know about Kadane's Algorithm but after trying hard couldn't figure out how something like that is working, don't worry you've come to the right place.</p>
+								
+								<p>So, before directly jumping in the Kadane's Algo, first, you need to know about <strong>Dynamic Programming.</strong><br/>
+								
+								<h3>Dynamic Programming</h3>
+								
+								In simple words, Dynamic Programming is just a fancy way to call remember your past.<br/><br/>
+								<blockquote>Those who cannot remember the past are condemned to repeat it. --Dynamic Programming</blockquote>
+								Over here you can find a very intuitive and detailed explaination about Dynamic Programming on GeeksforGeeks -- <a href="https://www.geeksforgeeks.org/dynamic-programming/">Dynamic Programming from GeeksforGeeks.</a><br/></p>
+								
+								<h3>Maximum Subarray Problem</h3>
+								
+								<span class="image main"><img src="images/kadane_intro.png" alt="" /></span>
+								
+								<p>The task is to find a subarray (contiguous elements) of the given array that has the largest sum. For example, <br/>
+								<code>[-1, -3, 4, -1, -2, 1, 5, -3]</code><br/>
+								The answer would be 7 (a subarray).<br/><code>[0, -1, -5, 0, -4]</code><br/>
+								The answer would be 0 and so on.</p>
+								
+								<h3>Solutions</h3>
+								
+								<p><ul>
+									<li>Brute Force Approach</li>
+									<li>Dynamic Programming Approach</li>
+								</ul>
+								Let's look at each one by one.
+								<h3><u>Brute Force Approach</u></h3>
+								It's the very obvious but not a very good solution. In this we'll be going to calculate the sum of every possible subarray and the maximum of those would be the solution. Starting from index 0 calculate the sum og every possible subarray starting with <b>A[1], A[2]</b> and to <b>A[n-1]</b>, where n is the size of array.<br/>
+
+								We can make maximum addition of subarray starting with element A[i] the <b>temporary_max</b> at index i. After going through all the indices, we can have temporary_max for all indicies, and the maximum of those will give us the final solution which is <b>original_max</b>.<br/>
+								Having said that, using Brute-force to solve this problem is trivial. But i don't think this is a clever answer having a time complexity of <b>O(n<sup>2</sup>)</b>. Or frankly, brute-force is not a clever answer most of the times.<br/><br/><u><h3>Dynamic Programming (Kadane's Algorithm) </h3></u>
+								Dynamic Programming is the key to success in this problem having time complexity of <b>O(n)</b>.<br/>
+								Simple idea of the Kadane's algorithm is to look for all positive contiguous segments of the array (<b>temporary_max</b> is used for this). And keep track of maximum sum contiguous segment among all positive segments (<b>original_max</b> is used for this). Each time we get a positive sum compare it with  <b>original_max</b> and update <b>original_max</b> if <b>temporary_max</b> is greater than <b>original_max</b>.<br/><br/>
+								<pre><code>
+Initialize:
+	original_max , temporary_max = 0
+
+Loop for each element in array:
+	1. temporary_max = temporary_max + A[i]
+	2. if (temporary_max < 0):
+		temporary_max = 0
+	3. if (original_max < temporary_max):
+		original_max = temporary_max
+
+return original_max
+								</code></pre>
+								<br/>Now given below is a python implementation of Kadane's Algorithm<br/><br/>
+								<pre><code>
+def kadane_Algo(A):
+	temporary_max = original_max = A[0]
+	for x in A[1:]:
+		temporary_max = max(x, temporary_max + x)
+		original_max = max(original_max, temporary_max)
+	return original_max
+								</code></pre>
+								<br/>Basicaly, at each step what we do is:<br/>
+								<li>Check max between temporary_max and temporary_max + current element.</li>
+								<li>If yes, update temporary_max, otherwise current element id=s the largest subarray.</li>
+								<li>Then update the original_max if temporary_max > original_max.</li>
+
+								Whenever the llop will over, return the <code>original_max</code>.</p>
+
+								<h3>Conclusion</h3>
+								<p>Here we are completed with the Kadane's Algorithm which is a Dynamic Programming solution to Maximum Subarray Sum Problem in runtime of O(n).<br/>
+									And now I insist you to go and solve this <a href="https://practice.geeksforgeeks.org/problems/maximum-sum-rectangle/0">2D Maximum Subarray Sum Problem</a> by yourself.</p><br/>
+								<a href="#work"><span class="button"><b>BACK</b></span></a>
+							</article>
+
+
+						<!-- About -->
+							<article id="about">
+								<h2 class="major">About</h2>
+								<span class="image main"><img src="images/me/me1.jpeg" alt="" /></span>
+								<ul class="actions">
+										<li><span class="button small">GEEK</span></li>
+										<li><span class="button small">CODER</span></li>
+										<li><span class="button small">AMBIVERT</span></li>
+										<li><span class="button small">ENTHUSIAST</span></li>
+								</ul>
+								<H2>HI,</H2>
+								<p>Thanks for arriving here, I am <b>Abhishek kumar Singh</b>.  And i am a pre-final year Computer Engineering Student,  pursuing my degree from <b>UNIVERSITY OF PUNE, INDIA</b>.	I should hope my work reflects that.</p>
+					
+								<p>So, I think you guys are here because you want to know about me,  HUH!	Basically, 	I am from a small town in BIHAR, INDIA,	 currently living in Pune. <br/>Franky, I am not good talking about myself but i'll start by telling you my most favourite things to do, which includes but not limited to-</p>
+								<ul class="alt">
+									<li>Learning new technologies.</li>
+									<li>Reading Novels (THRILLER).</li>
+									<li>Competitive Programming.</li>
+									<li>Cooking and obviously eating alot.</li>
+									<li>Swimming.</li>
+									<li>And sometimes playing PUBG also.</li>
+								</ul>
+
+								<blockquote>I am more of a dog loving person than anything else.</blockquote>
+								<h3>SKILLS</h3>
+								<ul>
+									<li>DATA STRUCTURES AND ALGORITHMS</li>
+									<li>OBJECT ORIENTED PROGRAMMING</li>
+									<li>DATABASES</li>
+									<li>LINUX</li>
+									<li>WEB-APP DEVELOPMENT</li>
+								</ul>
+
+								<h3>LOOK UP FOR ME @</h3>
+								<p>Follow me <a href="https://twitter.com/AbhiSaphire">@Twitter</a>, See all my latest pics <a href="https://www.instagram.com/abhisaphire/">@Instagram</a> and also look at my codes <a href="https://github.com/AbhiSaphire">@GitHub</a>.</p>
+							</article>
+
+						<!-- Contact -->
+							<article id="contact">
+								<h2 class="major">Contact Me</h2>
+								<h3>LOOK UP FOR ME @</h3>
+								<p>Follow me <a href="https://twitter.com/AbhiSaphire">@Twitter</a>, See all my latest pics <a href="https://www.instagram.com/abhisaphire/">@Instagram</a> and also look at my codes <a href="https://github.com/AbhiSaphire">@GitHub</a>.<br/></p>
+								<p>And for all formal conversations, you can always shoot me a <br/><strong><a href="mailto:iabhikmr2000@gmail.com">mail</a></strong>.</p>
+								
+								<ul class="icons">
+									<li><a href="https://twitter.com/AbhiSaphire" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="https://www.instagram.com/abhisaphire/" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="https://github.com/AbhiSaphire" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
+							</article>
+
+						<!-- PROJECTS -->
+							<article id="elements">
+								<h2 class="major">Projects</h2>
+								<span class="image main"><img src="images/projects.jpg" alt="" /></span>
+								<h2>List of Projects</h2>
+								<ul class="alt">
+									<li><strong><a href="#project1">WEB SCRAPER</a></strong></li>
+									<li><strong><a href="#project2">TRAVEL AGENCY</a></strong></li>
+									<!--<li><strong><a href="#project3">FEEDBACK MANAGEMENT</a></strong></li>-->
+								</ul>
+							</article>
+
+						<!--project 1-->
+							<article id="project1">
+								<h2 class="major">WEB SCRAPER</h2>
+								<span class="image main"><img src="images/project1.jpg" alt="" /></span>
+								<ul class="actions">
+										<li><span class="button small">PYTHON</span></li>
+										<li><span class="button small">WEB-CRAWLER</span></li>
+								</ul>
+								<h2>A simple python web scraper / crawler.</h2>
+								<h3>ABOUT</h3>
+								<p>For the web crawler two standard library are used - requests and BeautfulSoup4. requests provides a easy way to connect to world wide web and BeautifulSoup4 is used for some particular string operations.<br/>
+								Here this crawler collects all the product headings and respective links of the products pages from a page of amazon.in . User just need to specify what kind of data or links to be crawled.(Intially it's for title and their links)</p>
+								<h3>HOW TO RUN</h3>
+								<p>
+									<ul>
+										<li><b>Install pip3</b><br/>
+										<code>sudo apt install python3-pip</code></li>
+										<li><b>Install bs4 module</b><br/>
+										<code>pip3 install bs4</code></li>
+										<li><b>Compile and run</b><br/>
+										<code>python3 scraper.py</code></li>
+									</ul>
+								</p><br/>
+								<ul class="actions">
+									<li><a href="https://github.com/AbhiSaphire/Web-Scraper"><span class="button"><b>Repository</b></span></a></li>
+									<li><a href="#elements"><span class="button"><b>BACK</b></span></a></li>
+								</ul>
+							</article>
+
+						<!--project 2-->
+							<article id="project2">
+								<h2 class="major">Travel Agency</h2>
+								<span class="image main"><img src="images/project2.jpg" alt="" /></span>
+								<ul class="actions">
+										<li><span class="button small">C++</span></li>
+										<li><span class="button small">OOP-CONCEPT</span></li>
+								</ul>
+								<h2>A simple Travel / Tourism Agency Project.</h2>
+								<h3>ABOUT</h3>
+								<p>This Tourism Management Software is written in C++ programming language. Database used in this project is Files *not sql*. </p>
+								<h3>MODULES</h3>
+								<div class="table-wrapper">
+										<table>
+											<thead>
+												<tr>
+													<th>ADMIN</th>
+													<th>END-USER</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>Modify Packages</td>
+													<td>Select Packages</td>
+												</tr>
+												<tr>
+													<td>Modify National Destinations</td>
+													<td>Select National Destinations</td>
+												</tr>
+												<tr>
+													<td>Modify International Destinations</td>
+													<td>Select International Destinations</td>
+												</tr>
+												<tr>
+													<td>View Customer Details</td>
+													<td>Pay for Trip</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								<h3>Pre-requisites</h3>
+								<p>
+									<ul>
+										<li>Understanding of inheritance, Virtual and friend functions.</li>
+										<li>Understanding of file handling functions.</li>
+										<li>Basic C++ graphics understanding.</li>
+									</ul>
+								</p><br/>
+								<ul class="actions">
+									<li><a href="https://github.com/AbhiSaphire/TravelAgency"><span class="button"><b>Repository</b></span></a></li>
+									<li><a href="#elements"><span class="button"><b>BACK</b></span></a></li>
+								</ul>
+							</article>
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<p class="copyright">&copy; Copyrights reserved 2019 .<a href="#">Abhishek</a>.</p>
+					</footer>
+
+			</div>
+
+		<!-- BG -->
+			<div id="bg"></div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
